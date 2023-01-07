@@ -1,0 +1,27 @@
+<script>
+const random = [4, 73, 67,38,33]
+const random2 = [1,1,2];
+const random3 = "C;C;code swarm";
+const random4 = "S;C;OrangeHighlighter";
+
+
+function gradingStudents(grades) {
+    // Write your code here
+    const length = grades.shift();
+    for ( let i = 0; i < length; i++ ) {
+        if ( grades[ i ] < 38 ) {
+            grades[ i ];
+        } else if ( grades[ i ] % 5 <= 2 ){
+            grades[ i ];
+        } else {
+            grades[ i ] = Math.round( grades[ i ] / 5) * 5;
+        }
+    }
+    return grades;
+}
+console.log(gradingStudents(random))
+
+
+
+
+</script>

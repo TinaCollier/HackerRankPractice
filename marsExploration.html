@@ -1,0 +1,30 @@
+<script>
+const random = [4, 73, 67,38,33]
+const random2 = [1,1,2];
+const random3 = "SOSSPSSQSSOR";
+const random4 = "S;C;OrangeHighlighter";
+
+
+function marsExploration(s) {
+    var count = 0;
+    const array = s.split('');
+    for ( let i = 0; i < array.length; i++) {
+        if ( array[ i ] !== "S" ) {
+            count++;
+        }
+        if ( array[ i + 1 ] !== "O") {
+            count++;
+        } 
+        if ( array[ i + 2 ] !== "S" ) {
+            count++;
+        }
+        i += 2;
+    }
+    return count;
+}
+console.log(marsExploration(random3))
+
+
+
+
+</script>
