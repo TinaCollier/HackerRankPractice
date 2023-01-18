@@ -1,0 +1,23 @@
+<script>
+const random = 1
+const random2 = [0,1];
+const random3 = [0,2];
+const random4 = "S;C;OrangeHighlighter";
+
+
+function twoArrays(k, A, B) {
+    const aSorted = A.sort( ( a, b ) => a - b);
+    const bSorted = B.sort( ( a, b ) => b - a );
+    for ( let i = 0; i < A.length; i++ ) {
+        if ( A[ i ] + B[ i ] < k) {
+            return "NO";
+        }
+    } 
+    return 'YES';
+}
+console.log(twoArrays(random, random2, random3))
+
+
+
+
+</script>
