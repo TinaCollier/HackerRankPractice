@@ -2,18 +2,24 @@
 const random = 1
 const random2 = [0,1];
 const random3 = [0,2];
-const random4 = "S;C;OrangeHighlighter";
+const random4 = "NOVmETKPTbYu ftZPEykhjgF GGkdGjWGwW skjPJsea dtwdqcr DERCUgxOxrRgDQbdzL IZjyXs";
 
 
-function twoArrays(k, A, B) {
-    for ( let i = 0; i < A.length; i++ ) {
-        console.log( A[ i ] + B[ i ]);
-    }
-
+function pangrams(s) {
+    // Write your code here
+    var count = 0;
+    const lowerCaseString = s.toLowerCase();
+    const stringArray = lowerCaseString.split('');
+    const alphabetArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+    alphabetArray.forEach( letter => {
+        if ( stringArray.includes( letter ) ) {
+            count++;
+        }
+    })
+    return count === 26 ? 'pangram' : 'not pangram';
 }
-console.log(twoArrays(random, random2, random3))
 
-
+console.log( pangrams( random4 ))
 
 
 </script>
