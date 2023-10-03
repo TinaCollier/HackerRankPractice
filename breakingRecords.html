@@ -1,28 +1,35 @@
-<script>
-const random = [10,5,20,20,4,5,2,25,1,]
-const random2 = "12:45:54PM";
-const random3 = "12:00:00AM";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const example1 = [ 10, 23, 33, 2, 3 ]
 
 function breakingRecords(scores) {
     // Write your code here
-    var highScore = scores[0];
-    var lowScore = scores[0];
-    var countMin = 0;
-    var countMax = 0;
-
-    for ( let i = 1; i < scores.length; i++) {
-        if ( scores[ i ] > highScore ) {
-            highScore = scores[ i ];
-            countMax++;
-        } else if ( scores[ i ] < lowScore ) {
-            lowScore = scores[ i ];
-            countMin++;
-        } 
-    }
-    return [ countMax, countMin ];
+    let answer = [ 0, 0 ]
+    const firstScore = scores.shift();
+    let min = firstScore;
+    let max = firstScore;
+    scores.forEach( score => {
+        if ( score > min ){
+            answer[ 0 ]++;
+            min = score;
+        } else if ( score < max ){
+            answer[ 1 ]++;
+            max = score;
+        };
+    })  
+    return answer;
 }
 
-console.log(breakingRecords(random))
+console.log(breakingRecords( example1 ));
 
-
-</script>
+    </script>
+</body>
+</html>
