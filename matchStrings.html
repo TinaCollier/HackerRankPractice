@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const example1 = [ 'ab', 'ab', 'abc' ];
+const substrings = [ 'ab', 'abc', 'bc' ]
+
+function matchingStrings(strings, queries) {
+    // Write your code here
+    const length = queries.length
+    let result = Array( length ).fill( 0 );
+    for ( let i = 0; i < length; i++ ){
+        const query = queries[ i ];
+        strings.forEach( string => {
+            if ( string == query ){
+                result[ i ]++;
+            }
+        })
+    }
+    return result;
+}
+
+console.log(matchingStrings( example1, substrings ));
+
+    </script>
+</body>
+</html>

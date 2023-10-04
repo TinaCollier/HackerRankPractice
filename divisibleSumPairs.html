@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const example1 = [ 1, 3, 2, 6, 1, 2 ]
+
+function divisibleSumPairs(n, k, ar) {
+    // Write your code here
+    let number = 0;
+    for ( let i = 0; i < n; i++ ){
+        for ( let j = i + 1; j < n; j++ ){
+            if ( ( ar[ i ] + ar[ j ] ) % k == 0 ){
+                number++;
+            }
+        }
+    }
+    return number;
+}
+
+console.log(divisibleSumPairs( 6, 3, example1 ));
+
+    </script>
+</body>
+</html>
