@@ -7,26 +7,19 @@ const random3 = 0
 
 function flippingBits(n) {
     let flippedArray = [];
-    // turn the integer into a binary string
+
     let binary = n.toString( 2 );
-    // make sure the binary number is 32 bits
     let binaryToConvert = '0'.repeat( Math.max( 32 - binary.toString().length, 0 ) ) + binary;
-    // flip each 0 or 1 character in the string of 32 bits and push it to array
     for ( let digit in binaryToConvert ){
-        if ( binaryToConvert[ digit ] === '0' ){
-            flippedArray.push( 1 )
-        } else if ( binaryToConvert[ digit ] === '1' ){
-            flippedArray.push( 0 )
-        }
+        binaryToConvert[ digit ] === '0' ? flippedArray.push( 1 ) : flippedArray.push( 0 )
     }
-    // function to turn array into string and parse that string into an integer
+
     const parseArray = arr => {
         const binaryString = arr.join( '' );
         return parseInt( binaryString, 2 );
     }
     // convert binary array to integer
-    const result = parseArray( flippedArray );
-    return result;
+    return parseArray( flippedArray );
 }
 
 console.log(flippingBits(random))
