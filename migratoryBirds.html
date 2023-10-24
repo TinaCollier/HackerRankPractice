@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const example1 = [ 1, 4, 4, 4, 5, 3 ];
+const substrings = [ 'ab', 'abc', 'bc' ]
+
+function migratoryBirds(arr) {
+    // Write your code here
+    const sortedArr = [ ...arr ].sort();
+    const mode = arr => {
+        const store = {}
+        arr.forEach( ( num ) => store[ num ] ? store[ num ] += 1 : store[num] = 1)
+        return Object.keys( store ).sort( ( a, b ) => store[ b ] - store[ a ] )[ 0 ]
+        }
+    return mode( sortedArr );
+}
+
+console.log( migratoryBirds( example1 ) );
+
+    </script>
+</body>
+</html>
